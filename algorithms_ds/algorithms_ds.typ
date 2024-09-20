@@ -14,10 +14,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 #pagebreak()
 
-= Trees
-
-
-== Fenwick Trees
-
-To move donwards on the tree, we can use the function $f(i) =  i & (i + 1)$, to move upwards in the tree, we can use the the function $g(i) = i | (i + 1)$.
+#include("inner/fenwick.typ")
 
