@@ -7,7 +7,6 @@
 
 #let enumerated(func) = math.equation(block: true, numbering: "(1)", func, supplement: "Eq")
 
-
 #let project(
     title: "", 
     subtitle: "", 
@@ -50,16 +49,14 @@
 
         // Title and subtitle
         #v(0.01fr)
-        #text(size: 3.5em, strong(title)) \
+        #text(size: 3.5em, strong(title))
         #if subtitle != none {
             v(0.01fr)
             vline()
             v(0.01em)
-            // text(size: 2.5em, fill: blue.lighten(25%), subtitle)
             text(size: 1.5em, subtitle)
-
         }
-
+        #h(1fr) 
         #text(size: 1em, authors_fmt)
 
         #if abstract != none { 
@@ -97,7 +94,7 @@
 ) = {
     // Box containing all
     rect(
-        inset: 0pt, 
+        inset: ( left: 1pt, right: 0pt, top: 0pt, bottom: 0pt ), 
         outset: 0pt,
         stroke: (
             left: 2pt + line_color,
@@ -112,7 +109,7 @@
                 radius: ( bottom-right: 12pt, top-right: 12pt ),
                 align(left,title)
             )
-
+            
             // A block for the body
             #block(
                 inset: (left: 10pt, right: 10pt, bottom: 10pt), 
@@ -126,6 +123,9 @@
 
 
 // Definitions
+//
+// Main color -- Lighter
+// Side color -- Darker
 
 #let def_color = (
     rgb(176, 224, 230, 255),
@@ -133,16 +133,14 @@
 )
 
 #let lemma_color = (
-    rgb(176, 224, 230, 255),
-    rgb(145,255,255,100)
+    rgb(52, 121, 40, 255),
+    rgb(192, 235, 166, 100),
 )
-
 
 #let thm_color = (
-    rgb(176, 224, 230, 255),
-    rgb(145,255,255,100)
+    rgb(152, 125, 154, 255),
+    rgb(187, 154, 177, 100)
 )
-
 
 
 #let def(title: none, content) = side_bar_box(
