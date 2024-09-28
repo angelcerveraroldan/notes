@@ -49,13 +49,14 @@
 #show: project.with(
     title: "Group Theory 2",
     subtitle: "Yr 4, Semester 1",
-    topright: "Group Theory Ntes",
+    topright: "Group Theory Notes",
     abstract: abstract,
     quote: "For this proof, assume that group theroy is an interesting subject.",
 )
 
 #let chapters = (
     "intro",
+    "free_groups",
 )
 
 #for chapter in chapters {
