@@ -1,0 +1,11 @@
+name: Render pdfs
+on: push
+jobs:
+  render-paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: typst-community/setup-typst@v3
+        with:
+          cache-dependency-path: requirements.typ
+      - run: typst c abstact_algebra/abstract_algebra.typ --root "../"
