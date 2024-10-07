@@ -47,20 +47,39 @@
 })))
 
 #show: project.with(
-    title: "Group Theory 2",
-    subtitle: "Yr 4, Semester 1",
-    topright: "Group Theory Notes",
+    title: "Abstract Algebra",
+    subtitle: "",
+    topright: "Abstract Algebra Notes",
     abstract: abstract,
     quote: "For this proof, assume that group theroy is an interesting subject.",
 )
 
-#let chapters = (
-    "intro",
-    "free_groups",
-)
+#show heading.where(
+  level: 1
+): it => block(width: 100%)[
+  #set align(center)
+  #set text(30pt, weight: "bold")
+  #smallcaps(it.body)
+]
+#pagebreak()
 
-#for chapter in chapters {
-    pagebreak()
-    include("./notes/" + chapter + ".typ")
+#let sections = ("gruops", "rings", "fields")
+
+#heading("Group Theory")
+#vline()
+
+#let groupsc = ( "intro", "free_groups" )
+#for chapter in groupsc {
+    include("./notes/groups/" + chapter + ".typ")
 }
+#pagebreak()
+
+#heading("Rings And Fields 1")
+#vline()
+
+#let ringsc = ( "intro", )
+#for chapter in ringsc {
+    include("./notes/rings/" + chapter + ".typ")
+}
+
 
