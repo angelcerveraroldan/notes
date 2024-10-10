@@ -4,6 +4,7 @@
 
 
 #let iso = $tilde.equiv$
+#let nsub = $lt.tri.eq$
 
 == Quotient groups
 
@@ -22,7 +23,7 @@ $ G_h times G_(h') = G_(h h') $
 
 
 #lemma([
-    Given some fiber $G_(phi g)$, every element in that fiber is given by $g k$ for some $k in ker phi$.
+    For any $g in G$, every element in $G_(phi g)$ by $g k$ for some $k in ker phi$.
 
    $ G_(phi g) = g ker phi = {g k | k in ker phi} $
 ])
@@ -46,4 +47,17 @@ $ G_h times G_(h') = G_(h h') $
 We can also see that all fibers must have the exact same size. Take some $g in G_h$, then we know that $G_h = g ker phi$. If we fix 
 said $g$, we can create a mapping from the kernel to $G_h$ as follows $k |-> g k$. This is bijection, since we know that $g ker phi = G_h$.
 Therefore, they must have the same size, so we know that the size of $G$ is some multiple of the size of the kernel of $phi$.
+
+== Normal Subgroups
+
+#def(title:"Normal Subgroups", [
+    Let $N <= G$, then the following are equivalent:
+
+    + $N nsub G$
+    + $N_G(N) = G$
+    + $forall g in G$ we have that $g N = N g$
+    + $g N inv(g) subset.eq N$
+])
+
+From the above, we can see that if $N <= G$, then $N$ is normal iff there exists some homomorphism $phi$ such that $ker phi = N$
 
