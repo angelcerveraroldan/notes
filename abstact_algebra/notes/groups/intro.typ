@@ -59,5 +59,5 @@ Therefore, they must have the same size, so we know that the size of $G$ is some
     + $g N inv(g) subset.eq N$
 ])
 
-From the above, we can see that if $N <= G$, then $N$ is normal iff there exists some homomorphism $phi$ such that $ker phi = N$
+From the above, we can see that if $N <= G$, then $N$ is normal iff there exists some homomorphism $phi$ such that $ker phi = N$, so an intuitive way to think about this, is that $N nsub G$ if $N = G_(phi g)$ for some $g in G$
 
