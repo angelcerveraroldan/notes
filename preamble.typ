@@ -109,7 +109,7 @@
                 radius: ( bottom-right: 12pt, top-right: 12pt ),
                 align(left,title)
             )
-            
+
             // A block for the body
             #block(
                 inset: (left: 10pt, right: 10pt, bottom: 10pt), 
@@ -165,11 +165,10 @@
 )
 
 // Homework
-#let homework(title: none, content) = titled_box(
-    title: title,
-    rgb(204, 204, 255, 255), 
-    rgb(132, 132, 148, 255), 
-    "Homework Question",
+#let homework(title: none, content) = side_bar_box(
+    thm_color.at(0),
+    thm_color.at(1),
+    if title == none { "Question" } else { "Question: " + title },
     content,
 )
 
