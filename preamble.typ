@@ -14,6 +14,7 @@
     topright: none,
     abstract: none,
     quote: none,
+    toc: false,
     body) = {
     // Set the documents basic properties
     set document(author: authors, title: title)
@@ -79,7 +80,7 @@
         number-align: end,
         header: header
     )
-    outline()
+    if (toc) { outline() }
 
     body
 }
