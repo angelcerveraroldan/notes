@@ -32,13 +32,13 @@ $
     3+i = 3(1 + i) - (1 + i)^2 in tring(1 + i) ", also " 2   = -i (1 + i)^2  in tring(1 + i)
 $
 
-So every element that can be written in terms of $3 + i, 2$ can be written in terms of $1 + i$, thus $tring(2 comma 3 + i) subset.eq tring(1 + i)$
+So every element that can be written in terms of $3 + i$ and 2 can also be written in terms of $1 + i$, thus $tring(2 comma 3 + i) subset.eq tring(1 + i)$
 
 $
     1 + i = (3 + i) - 2
 $
 
-So every element that can be written in terms of $1 + i$ can be written in terms of $3 + i, 2$, thus $tring(1 + i) subset.eq tring(2 comma 3 + i)$
+So every element that can be written in terms of $1 + i$ can be written in terms of $3 + i$ and 2, thus $tring(1 + i) subset.eq tring(2 comma 3 + i)$
 Therefore, $tring(2 comma 3 + i) = tring(1 + i)$, which is a principal ideal.
 
 = Question 2
@@ -91,7 +91,7 @@ To show that 7 is prime in $ZZ[i]$, we need to show that $forall x, y in ZZ[i]$,
 Let $x := aa + i bb, y := ll + i pp in ZZ[i]$ such that $7 | x y$, then, we know that there is some $n in ZZ[i]$ such that $7 n = x y$, let $n = a + i b$
 
 $N(7 n) = (7 a)^2 + (7 b)^2 = 49 (a^2 + b^2)$, and $N(x y) = N(x) N(y) = (aa^2 + bb^2) (ll^2 + pp^2)$, and since $N(7n) =  N(x y)$, and (now in $NN$) that 
-7 divies $N(7 n)$, then 7 must divide $(aa^2 + bb^2) (ll^2 + pp^2)$, meaning that 7 must divide $aa^2 + bb^2$ or $ll^2 + pp^2$ (or both).
+7 divides $N(7 n)$, then 7 must divide $(aa^2 + bb^2) (ll^2 + pp^2)$, meaning that 7 must divide $aa^2 + bb^2$ or $ll^2 + pp^2$ (or both).
 
 Wlog, say that it divides $aa^2 + bb^2$, since we already know that 7 is a prime (in $NN$), we must have that $7$ must divide both $aa^2$ and $bb^2$, meaning that
 $7 | (aa + i bb)$ in $ZZ[i]$, this by definition shows that $7$ is a prime in $ZZ[i]$ too.
@@ -100,12 +100,12 @@ $7 | (aa + i bb)$ in $ZZ[i]$, this by definition shows that $7$ is a prime in $Z
 
 Take $a + i b$, where $a, b in ZZ$, then we can define the surjective ring homomorphism $ sigma : ZZ[i] -> ZZ_7 [i] := a + i b |-> a mod 7 + i (b mod 7) $
 
-We can see that $ker sigma = {7 a + i 7 b | a, b in ZZ} = (7)$, then by the isomorphism theorems, we know that $ZZ[i]\/ker sigma iso ZZ_7 [i]$, and since $|ZZ_7 [i]| = 49$, 
-then we know that $|ZZ[i]\/(7)| = 49$
+We can see that $ker sigma = {7 a + i 7 b | a, b in ZZ} = tring(7)$, then by the isomorphism theorems, we know that $ZZ[i]\/ker sigma iso ZZ_7 [i]$, and since $|ZZ_7 [i]| = 49$, 
+then we know that $|ZZ[i]\/tring(7)| = 49$
 
 == Part 4
 
-For commutative ring $R$, $R\/I$ is a field iff $I$ is maximal ideal. Since $ZZ[i]$ is commutative, and $ZZ[i]\/(7)$ is a field, then we have that $(7)$ is maximal ideal.
+For commutative ring $R$, $R\/I$ is a field iff $I$ is maximal ideal. Since $ZZ[i]$ is commutative, and $ZZ[i]\/tring(7)$ is a field, then we have that $tring(7)$ is maximal ideal.
 
 
 
