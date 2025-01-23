@@ -2,7 +2,7 @@
 
 #import "@preview/fletcher:0.5.1" as fletcher: diagram, node, edge
 
-#let abstract = align(center, "TODO")
+#let abstract = align(center, "")
 
 #show: project.with(
     title: "Diff Geometry",
@@ -13,7 +13,7 @@
 )
 
 #let chapters = (
-    "intro",
+    "formulas",
 )
 
 #pagebreak()
