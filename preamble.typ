@@ -7,6 +7,11 @@
 
 #let enumerated(func) = math.equation(block: true, numbering: "(1)", func, supplement: "Eq")
 
+// A few counters
+#let thmcnt = counter("theorem_counter")
+#let leammacnt = counter("lemma_counter")
+#let defcnt = counter("definition_counter")
+
 #let project(
     title: "",
     subtitle: "",
@@ -156,24 +161,34 @@
 )
 
 
-#let def(title: none, content) = side_bar_box(
+#let generate_title(keyw, title, counter_name, counter_spec, ignore) = [ 
+    #let opt_counter =  if not ignore { 
+        " " + counter_spec.step(); context counter(counter_name).display()
+    } + ":"
+    
+    #text(keyw + opt_counter)
+    #if title != none { title } 
+]
+
+#let def(title: none, ignore: false, content) = side_bar_box(
     def_color.at(0),
     def_color.at(1),
-    if title == none { "Definition" } else { "Definition: " + title },
+    generate_title("Definition", title, "definition_counter", defcnt, ignore),
     content,
 )
 
-#let lemma(title: none, content) = side_bar_box(
+#let lemma(title: none, ignore: false, content) = side_bar_box(
     lemma_color.at(0),
     lemma_color.at(1),
     if title == none { "Lemma" } else { "Lemma: " + title },
+    generate_title("Lemma", title, "lemma_counter", leammacnt, ignore),
     content,
 )
 
-#let thm(title: none, content) = side_bar_box(
+#let thm(title: none, ignore: false, content) = side_bar_box(
     thm_color.at(0),
     thm_color.at(1),
-    if title == none { "Theorem" } else { "Theorem: " + title },
+    generate_title("Theorem", title, "theorem_counter", thmcnt , ignore),
     content,
 )
 
