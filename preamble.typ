@@ -8,9 +8,9 @@
 #let enumerated(func) = math.equation(block: true, numbering: "(1)", func, supplement: "Eq")
 
 #let project(
-    title: "", 
-    subtitle: "", 
-    authors: ( name, student_number ), 
+    title: "",
+    subtitle: "",
+    authors: ( name, ), 
     topright: none,
     abstract: none,
     quote: none,
@@ -20,7 +20,7 @@
     set document(author: authors, title: title)
 
     let authors_fmt = {
-    // Author information
+        // Author information
         let separator = ", "
         let l = authors.len()
         for i in range(l - 1) {
@@ -44,7 +44,6 @@
     // SETUP THE TITLE
     [
         #vline()
-        // TODO: Nicer font for title
         #set text(size: 1.25em, hyphenate: true)
         #set par(justify: false)
 
@@ -71,6 +70,19 @@
 
     set text(font: "New Computer Modern", lang: "en")
     show math.equation: set text(weight: 400)
+
+
+    set heading(numbering: "1.")
+    show heading.where(
+        level: 1
+    ): it => [
+        #block(width: 100%, below: 20pt)[
+            #set text(30pt, weight: "bold")
+            #set align(center)
+            #context counter(heading).display()
+            #smallcaps(it.body)
+        ]
+    ]
 
 
     // Main body.
