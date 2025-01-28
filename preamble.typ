@@ -180,7 +180,6 @@
 #let lemma(title: none, ignore: false, content) = side_bar_box(
     lemma_color.at(0),
     lemma_color.at(1),
-    if title == none { "Lemma" } else { "Lemma: " + title },
     generate_title("Lemma", title, "lemma_counter", leammacnt, ignore),
     content,
 )
